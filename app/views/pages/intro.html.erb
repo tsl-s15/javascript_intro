@@ -2,11 +2,26 @@
   .impt {
     color: red;
   }
+
+  .green {
+    background-color: green;
+  }
+
+  .orange {
+    background-color: orange;
+  }
 </style>
 
 <h1>Javascript introduction</h1>
 <p>Find me in app/views/pages/intro.html.erb</p>
 <a href="#" class='remove-heading'>Remove heading</a>
+
+<p>Change the page color to:</p>
+<div>
+  <a href="#" class='to-green'>Green</a> |
+  <a href="#" class='to-orange'>Orange</a> |
+  <a href="#" class='reset'>Reset</a>
+</div>
 
 <!-- Create 3 links to change the background color of the page to 3 different colors -->
 <!-- 1. Create the links -->
@@ -16,11 +31,35 @@
       <!-- theBody.className = 'something'; -->
 
 <script>
+  var body = document.querySelector('body');
+  // var removeLink  = document.querySelector('.remove-heading');
+  var greenLink = document.querySelector('.to-green');
+  var orangeLink = document.querySelector('.to-orange');
+  var resetLink = document.querySelector('.reset');
 
-  var removeLink  = document.querySelector('.remove-heading');
-  removeLink.onclick = function(){
-    var heading = document.querySelector('h1');
-    heading.remove();
+
+
+  $('.remove-heading').click(function(){
+    $('h1').fadeOut();
+  });
+
+  // removeLink.onclick = function(){
+  //   var heading = document.querySelector('h1');
+  //   heading.remove();
+  // }
+
+  greenLink.onclick = function() {
+    body.className = 'green';
   }
+
+  orangeLink.onclick = function() {
+    body.className = 'orange';
+  }
+
+  resetLink.onclick = function() {
+    body.className = '';
+  }
+
 </script>
+
 
