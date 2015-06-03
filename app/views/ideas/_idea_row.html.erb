@@ -1,0 +1,6 @@
+<tr id="idea_<%= idea.id %>">
+  <td><%= idea.desc %></td>
+  <td><%= link_to 'Details', idea %></td>
+  <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+  <td><%= link_to 'Destroy', idea, method: :delete, remote: true %></td>
+</tr>

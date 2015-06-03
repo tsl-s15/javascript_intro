@@ -56,10 +56,13 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1
   # DELETE /ideas/1.json
   def destroy
+    @idea_id = @idea.id
     @idea.destroy
+
     respond_to do |format|
       format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

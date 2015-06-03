@@ -1,1 +1,1 @@
-alert('it worked!');
+$('tbody').append("<%= escape_javascript(render('idea_row', idea: @idea)) %>");
