@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
+    @idea = Idea.new
     @ideas = Idea.all
   end
 
@@ -30,6 +31,7 @@ class IdeasController < ApplicationController
       if @idea.save
         format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
         format.json { render :show, status: :created, location: @idea }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @idea.errors, status: :unprocessable_entity }
