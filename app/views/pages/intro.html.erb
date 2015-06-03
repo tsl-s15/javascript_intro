@@ -1,0 +1,26 @@
+<style>
+  .impt {
+    color: red;
+  }
+</style>
+
+<h1>Javascript introduction</h1>
+<p>Find me in app/views/pages/intro.html.erb</p>
+<a href="#" class='remove-heading'>Remove heading</a>
+
+<!-- Create 3 links to change the background color of the page to 3 different colors -->
+<!-- 1. Create the links -->
+<!-- 2. Tie onclick handlers to the links -->
+<!-- 3. Create CSS classes for different colors -->
+<!-- 4. Have the onclick handlers change the className of the 'body' element -->
+      <!-- theBody.className = 'something'; -->
+
+<script>
+
+  var removeLink  = document.querySelector('.remove-heading');
+  removeLink.onclick = function(){
+    var heading = document.querySelector('h1');
+    heading.remove();
+  }
+</script>
+
